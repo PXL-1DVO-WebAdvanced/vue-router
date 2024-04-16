@@ -25,7 +25,8 @@
         :subTitle="subTitle"
     />
 
-
+    <router-view></router-view>
+    
     <FooterComponent
         :mainTitle="mainTitle" 
         :subTitle="subTitle"

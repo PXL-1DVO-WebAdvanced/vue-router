@@ -8,11 +8,11 @@
                     "src/assets/images/nav-img-3.jpg",
                 ],
                 navItems: [
-                    "Home",
-                    "Product",
-                    "Cart",
-                    "About us",
-                    "Contact"
+                    { path: "/", name: "Home" },
+                    { path: "/products", name: "Product" },
+                    { path: "/cart", name: "Cart" },
+                    { path: "/about", name: "About us" },
+                    { path: "/contact", name: "Contact" }
                 ]
             }
         }
@@ -26,6 +26,7 @@
             <label for="check" class="menu">
                 <div v-for="index in 3" 
                     class="menu-line" 
+                    :key="index"
                     v-bind:class="`menu-line-${index}`">
                 </div>
             </label>
@@ -34,15 +35,18 @@
             <div class="navbar-navigation-left">
                 <img v-for="(imagePath, index) in navImagePaths" 
                     v-bind:src="imagePath" 
+                    :key="index"
                     alt="navigation image"
                     class="left-img"
                     v-bind:class="`left-img-${index + 1}`">
             </div>
             <div class="navbar-navigation-right">
                 <ul class="nav-list">
-                    <li v-for="navItem in navItems"
+                    <li v-for="(navItem, index) in navItems"
+                        :key="index"
                         class="nav-list-item">
-                        <a href="#" class="nav-list-link">{{ navItem }}</a>
+                        <!-- <a href="#" class="nav-list-link">{{ navItem }}</a> -->
+                        <router-link class="nav-list-link" :to="navItem.path">{{ navItem.name }}</router-link>
                     </li>
                 </ul>
             </div>
