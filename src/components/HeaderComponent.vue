@@ -25,7 +25,7 @@
             <!-- <a href="#" class="logo">
                 <i class="fas fa-shoe-prints"></i>
             </a> -->
-            <router-link to="/" class="logo">
+            <router-link to="/home" class="logo">
                 <i class="fas fa-shoe-prints"></i>
             </router-link>
             <div>
