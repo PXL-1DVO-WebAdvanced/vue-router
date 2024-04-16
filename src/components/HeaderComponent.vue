@@ -10,6 +10,11 @@
         props: {
             mainTitle: String,
             subTitle: String
+        },
+        methods: {
+            gotoProducts() {
+                this.$router.push('products')
+            }
         }
     }
 </script>
@@ -17,9 +22,12 @@
 <template>
     <header class="header">
         <div class="brand">
-            <a href="#" class="logo">
+            <!-- <a href="#" class="logo">
                 <i class="fas fa-shoe-prints"></i>
-            </a>
+            </a> -->
+            <router-link to="/" class="logo">
+                <i class="fas fa-shoe-prints"></i>
+            </router-link>
             <div>
                 <h1 class="main-name">{{ mainTitle }}</h1>
                 <p class="sub-name">{{ subTitle }}</p>
@@ -28,7 +36,7 @@
         <div class="header-banner">
             <h1 class="main-heading">{{ mainHeading }}</h1>
             <h3 class="sub-heading">{{ subHeading }}</h3>
-            <button type="button" class="main-button">{{ buttonText }}</button>
+            <button type="button" class="main-button" @click="gotoProducts()">{{ buttonText }}</button>
         </div>
     </header>
 </template>
